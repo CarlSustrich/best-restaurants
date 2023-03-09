@@ -2,4 +2,29 @@
   Layout = "_Layout";
 }
 
-@using BestRestaurant.Models;
+@model BestRestaurant.Models.Restaurant;
+
+<h2>Add a new restaurant</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.RestaurantName)
+  @Html.TextBoxFor(model => model.RestaurantName)
+
+  @Html.LabelFor(model => model.Cuisine)
+  @Html.DropDownList("CuisineId")
+  <br>
+  <input type="submit" value="Add restaurant" class="btn btn-primary">
+}
+
+@* List of Strongly Type HTML Helpers
+
+@Html.HiddenFor
+@Html.LabelFor
+@Html.TextBoxFor
+@Html.RadioButtonFor
+@Html.DropDownListFor
+@Html.CheckBoxFor
+@Html.TextAreaFor
+@Html.PasswordFor
+@Html.ListBoxFor *@
